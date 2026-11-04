@@ -67,9 +67,9 @@ body:
       label: 환경 정보
       description: 버그가 발생한 환경을 알려주세요.
       placeholder: |
-        - OS: 
-        - Browser: 
-        - Version: 
+        - OS:
+        - Browser:
+        - Version:
         - Device:
     validations:
       required: false
