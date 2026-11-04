@@ -1,6 +1,6 @@
 name: 📝 Documentation
 description: 문서 수정 요청
-title: 'docs: '
+title: '[Docs] '
 labels: ['docs']
 body:
   - type: markdown

@@ -1,6 +1,6 @@
 name: ♻️ Refactoring
 description: 코드 리팩토링 요청
-title: 'refactor: '
+title: '[Refactor] '
 labels: ['refactor']
 body:
   - type: markdown
