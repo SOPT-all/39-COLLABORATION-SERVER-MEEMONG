@@ -1,4 +1,4 @@
-package org.sopt.meemongserver;
+package org.sopt.meemong;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package org.sopt.meemongserver;
+package org.sopt.meemong;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
