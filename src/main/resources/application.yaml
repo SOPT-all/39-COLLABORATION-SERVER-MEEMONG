@@ -3,7 +3,7 @@ spring:
     name: meemong-server
 
   datasource:
-    url: "${DB_URL:jdbc:mysql://localhost:3306/meemong}"
+    url: "${DB_URL:jdbc:mysql://localhost:3307/meemong}"
     username: "${DB_USERNAME:meemong}"
     password: "${DB_PASSWORD}"
 
