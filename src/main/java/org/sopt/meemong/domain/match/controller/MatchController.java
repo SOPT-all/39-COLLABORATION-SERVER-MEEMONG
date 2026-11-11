@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/posts")
-public class MatchController {
+public class MatchController implements MatchApi{
 
     private final RecommendedPostService recommendedPostService;
     private final GeneralPostService generalPostService;
@@ -24,11 +24,13 @@ public class MatchController {
         this.generalPostService = generalPostService;
     }
 
+    @Override
     @GetMapping("/recommended")
     public CommonResponse<RecommendedPostListResponse> getRecommendedPosts() {
         return CommonResponse.success(recommendedPostService.getRecommendedPosts());
     }
 
+    @Override
     @GetMapping("/general")
     public CommonResponse<GeneralPostListResponse> getGeneralPosts() {
         return CommonResponse.success(generalPostService.getGeneralPosts());
