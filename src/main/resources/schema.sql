@@ -61,6 +61,12 @@ CREATE TABLE posts (
         CHECK (JSON_TYPE(signatures) = 'ARRAY'),
     CONSTRAINT chk_posts_shooting_ranges_array
         CHECK (shooting_ranges IS NULL OR JSON_TYPE(shooting_ranges) = 'ARRAY'),
+    CONSTRAINT chk_posts_original_price_non_negative
+        CHECK (original_price IS NULL OR original_price >= 0),
+    CONSTRAINT chk_posts_display_price_non_negative
+        CHECK (display_price IS NULL OR display_price >= 0),
+    CONSTRAINT chk_posts_discount_rate_range
+        CHECK (discount_rate IS NULL OR discount_rate BETWEEN 0 AND 100),
     CONSTRAINT fk_posts_designer
         FOREIGN KEY (designer_id) REFERENCES designers (id)
 );
