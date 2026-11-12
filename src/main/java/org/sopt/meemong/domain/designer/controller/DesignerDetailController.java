@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/posts")
-public class DesignerDetailController {
+public class DesignerDetailController implements DesignerDetailApi {
     private final DesignerDetailService designerDetailService;
 
     public DesignerDetailController(DesignerDetailService designerDetailService) {
