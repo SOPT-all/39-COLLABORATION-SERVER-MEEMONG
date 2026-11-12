@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/posts")
-public class PostDetailController {
+public class PostDetailController implements PostDetailApi {
     private final PostDetailService postDetailService;
 
     public PostDetailController(PostDetailService postDetailService) {
         this.postDetailService = postDetailService;
     }
 
+    @Override
     @GetMapping("/{postId}")
     public ResponseEntity<CommonResponse<PostDetailResponse>> getPostDetail(@PathVariable Long postId) {
         PostDetailResponse response = postDetailService.getPostDetail(postId);
