@@ -3,6 +3,7 @@ package org.sopt.meemong.domain.post.dto.response;
 import org.sopt.meemong.domain.post.domain.*;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 public record PostDetailResponse(
@@ -25,6 +26,6 @@ public record PostDetailResponse(
         String region,
         int completedTreatmentCount,
         String content,
-        String createdAt
+        OffsetDateTime createdAt
 ) {
 }
