@@ -120,19 +120,19 @@ public class Post {
         return shootingRanges;
     }
 
-    public void like() {
-        this.isLiked = true;
-    }
-
-    public void unlike() {
-        this.isLiked = false;
-    }
-
     public boolean isLiked() {
         return isLiked;
     }
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public void like() {
+        this.isLiked = true;
+    }
+
+    public void unlike() {
+        this.isLiked = false;
     }
 }
