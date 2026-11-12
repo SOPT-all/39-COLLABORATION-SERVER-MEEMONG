@@ -41,7 +41,6 @@ public interface PostLikeApi {
             @ApiResponse(
                     responseCode = "400",
                     description = "공고 ID가 Long 범위 내의 양수가 아니거나 문자열인 경우",
-                    useReturnTypeSchema = true,
                     content = @Content(
                             examples = @ExampleObject(
                                     name = "INVALID_POST_ID",
@@ -57,7 +56,6 @@ public interface PostLikeApi {
             @ApiResponse(
                     responseCode = "404",
                     description = "해당 ID를 가진 공고가 존재하지 않는 경우",
-                    useReturnTypeSchema = true,
                     content = @Content(
                             examples = @ExampleObject(
                                     name = "POST_NOT_FOUND",
@@ -73,7 +71,6 @@ public interface PostLikeApi {
             @ApiResponse(
                     responseCode = "500",
                     description = "서버 내부의 예상하지 못한 오류",
-                    useReturnTypeSchema = true,
                     content = @Content(
                             examples = @ExampleObject(
                                     name = "INTERNAL_SERVER_ERROR",
@@ -123,7 +120,6 @@ public interface PostLikeApi {
             @ApiResponse(
                     responseCode = "400",
                     description = "공고 ID가 Long 범위 내의 양수가 아니거나 문자열인 경우",
-                    useReturnTypeSchema = true,
                     content = @Content(
                             examples = @ExampleObject(
                                     name = "INVALID_POST_ID",
@@ -139,7 +135,6 @@ public interface PostLikeApi {
             @ApiResponse(
                     responseCode = "404",
                     description = "해당 ID를 가진 공고가 존재하지 않는 경우",
-                    useReturnTypeSchema = true,
                     content = @Content(
                             examples = @ExampleObject(
                                     name = "POST_NOT_FOUND",
@@ -155,7 +150,6 @@ public interface PostLikeApi {
             @ApiResponse(
                     responseCode = "500",
                     description = "서버 내부의 예상하지 못한 오류",
-                    useReturnTypeSchema = true,
                     content = @Content(
                             examples = @ExampleObject(
                                     name = "INTERNAL_SERVER_ERROR",
