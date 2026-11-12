@@ -107,7 +107,6 @@ public interface MatchApi {
             @ApiResponse(
                     responseCode = "500",
                     description = "서버 내부의 예상하지 못한 오류",
-                    useReturnTypeSchema = true,
                     content = @Content(
                             mediaType = "application/json",
                             examples = @ExampleObject(
