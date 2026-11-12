@@ -7,13 +7,13 @@ import org.sopt.meemong.domain.post.repository.PostRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.ZoneOffset;
+import java.time.ZoneId;
 import java.util.List;
 
 @Service
 public class GeneralPostService {
 
-    private static final ZoneOffset KOREA_OFFSET = ZoneOffset.ofHours(9);
+    private static final ZoneId KOREA_ZONE = ZoneId.of("Asia/Seoul");
 
     private final PostRepository postRepository;
 
@@ -39,7 +39,7 @@ public class GeneralPostService {
                             post.getAvailableTimes(),
                             post.getTreatmentTypes(),
                             post.isLiked(),
-                            post.getCreatedAt().atOffset(KOREA_OFFSET)
+                            post.getCreatedAt().atZone(KOREA_ZONE).toOffsetDateTime()
                     );
                 })
                 .toList();
