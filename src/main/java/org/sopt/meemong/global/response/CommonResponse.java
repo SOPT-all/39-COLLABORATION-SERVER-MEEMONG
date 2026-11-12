@@ -1,5 +1,6 @@
 package org.sopt.meemong.global.response;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.sopt.meemong.global.exception.ErrorCode;
 
 /**
@@ -10,7 +11,16 @@ import org.sopt.meemong.global.exception.ErrorCode;
  * @param <T> 응답 데이터 타입
  */
 public record CommonResponse<T>(
+        @Schema(
+                description = "응답 결과 코드",
+                example = "SUCCESS",
+                requiredMode = Schema.RequiredMode.REQUIRED
+        )
         String code,
+        @Schema(
+                description = "성공 시 응답 데이터이며, 실패 시 null",
+                requiredMode = Schema.RequiredMode.REQUIRED
+        )
         T data
 ) {
     /**
