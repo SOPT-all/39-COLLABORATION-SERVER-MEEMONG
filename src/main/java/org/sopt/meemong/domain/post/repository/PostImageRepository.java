@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.List;
 
 public interface PostImageRepository extends JpaRepository<PostImage, Long> {
+    List<PostImage> findByPost_IdOrderByDisplayOrderAsc(Long postId);
 
     List<PostImage> findByPost_IdInOrderByDisplayOrderAscIdAsc(
             Collection<Long> postIds
