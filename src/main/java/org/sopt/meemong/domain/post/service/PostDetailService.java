@@ -17,7 +17,6 @@ import java.time.ZoneId;
 import java.util.List;
 
 @Service
-@Transactional(readOnly = true)
 public class PostDetailService {
     private static final ZoneId KOREA_ZONE = ZoneId.of("Asia/Seoul");
 
@@ -29,6 +28,7 @@ public class PostDetailService {
         this.postImageRepository = postImageRepository;
     }
 
+    @Transactional(readOnly = true)
     public PostDetailResponse getPostDetail(Long postId) {
         if (postId == null || postId <= 0) {
             throw new BusinessException(ErrorCode.INVALID_POST_ID);
