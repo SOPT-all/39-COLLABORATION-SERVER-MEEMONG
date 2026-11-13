@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-@Transactional(readOnly = true)
 public class DesignerDetailService {
     private final PostRepository postRepository;
     private final PortfolioImageRepository portfolioImageRepository;
@@ -33,12 +32,14 @@ public class DesignerDetailService {
         this.shopImageRepository = shopImageRepository;
     }
 
+    @Transactional(readOnly = true)
     public DesignerDetailResponse getDesignerDetail(Long postId) {
         if (postId == null || postId <= 0) {
             throw new BusinessException(ErrorCode.INVALID_POST_ID);
         }
 
-        Post post = postRepository.findById(postId).orElseThrow(() -> new BusinessException(ErrorCode.POST_NOT_FOUND));
+        Post post = postRepository.findById(postId)
+                .orElseThrow(() -> new BusinessException(ErrorCode.POST_NOT_FOUND));
 
         Designer designer = post.getDesigner();
         Shop shop = designer.getShop();
