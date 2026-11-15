@@ -44,15 +44,13 @@ public interface PostDetailApi {
                                                 "treatmentTypes": ["CUT"],
                                                 "signatures": ["CUT"],
                                                 "shootingRanges": ["PHOTO"],
-                                                "availableTimes": ["WEEKDAY_MORNING"],
                                                 "shopName": "아벨라움",
                                                 "designerId": 1,
                                                 "designerName": "승환",
                                                 "designerProfileImageUrl": "https://example.com/profile.jpg",
                                                 "region": "경기 고양시",
                                                 "completedTreatmentCount": 12,
-                                                "content": "고객님께 어울리는 커트 스타일을 제안합니다.",
-                                                "createdAt": "2026-11-07T16:17:00+09:00"
+                                                "content": "고객님께 어울리는 커트 스타일을 제안합니다."
                                               }
                                             }
                                             """
