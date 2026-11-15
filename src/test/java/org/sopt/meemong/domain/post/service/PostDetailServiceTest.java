@@ -20,8 +20,6 @@ import org.sopt.meemong.domain.shop.domain.Shop;
 import org.sopt.meemong.global.exception.BusinessException;
 import org.sopt.meemong.global.exception.ErrorCode;
 
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
 import java.util.List;
 import java.util.Optional;
 
@@ -73,9 +71,6 @@ class PostDetailServiceTest {
 
         assertThat(response.shootingRanges())
                 .containsExactly(ShootingRange.PHOTO);
-
-        assertThat(response.createdAt().getOffset())
-                .isEqualTo(ZoneOffset.ofHours(9));
 
         verify(postRepository).findById(1L);
         verify(postImageRepository)
@@ -153,9 +148,6 @@ class PostDetailServiceTest {
         when(post.getId()).thenReturn(1L);
         when(post.getTitle()).thenReturn("뭘 해야 할지 모르겠다면?");
         when(post.getDesigner()).thenReturn(designer);
-        when(post.getCreatedAt()).thenReturn(
-                LocalDateTime.of(2026, 11, 7, 16, 17)
-        );
 
         when(designer.getShop()).thenReturn(shop);
         when(designer.getId()).thenReturn(1L);

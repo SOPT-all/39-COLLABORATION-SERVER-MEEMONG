@@ -12,14 +12,10 @@ import org.sopt.meemong.global.exception.ErrorCode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.OffsetDateTime;
-import java.time.ZoneId;
 import java.util.List;
 
 @Service
 public class PostDetailService {
-    private static final ZoneId KOREA_ZONE = ZoneId.of("Asia/Seoul");
-
     private final PostRepository postRepository;
     private final PostImageRepository postImageRepository;
 
@@ -46,10 +42,6 @@ public class PostDetailService {
                 .map(PostImage::getImageUrl)
                 .toList();
 
-        OffsetDateTime createdAt = post.getCreatedAt()
-                .atZone(KOREA_ZONE)
-                .toOffsetDateTime();
-
         return new PostDetailResponse(
                 post.getId(),
                 post.getTitle(),
@@ -62,15 +54,13 @@ public class PostDetailService {
                 post.getTreatmentTypes(),
                 post.getSignatures(),
                 post.getShootingRanges() == null ? List.of() : post.getShootingRanges(),
-                post.getAvailableTimes(),
                 shop.getName(),
                 designer.getId(),
                 designer.getName(),
                 designer.getProfileImageUrl(),
                 designer.getRegion(),
                 designer.getCompletedTreatmentCount(),
-                post.getContent(),
-                createdAt
+                post.getContent()
         );
     }
 }
