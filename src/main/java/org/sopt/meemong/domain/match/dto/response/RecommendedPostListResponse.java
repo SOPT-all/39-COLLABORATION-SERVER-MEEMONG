@@ -1,5 +1,6 @@
 package org.sopt.meemong.domain.match.dto.response;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.sopt.meemong.domain.post.domain.AvailableTime;
 import org.sopt.meemong.domain.post.domain.PriceType;
 import org.sopt.meemong.domain.post.domain.TreatmentType;
@@ -7,6 +8,7 @@ import org.sopt.meemong.domain.post.domain.TreatmentType;
 import java.time.OffsetDateTime;
 import java.util.List;
 
+@Schema(name = "RecommendedPostCard")
 public record RecommendedPostListResponse(List<Card> posts) {
 
     public record Card(
