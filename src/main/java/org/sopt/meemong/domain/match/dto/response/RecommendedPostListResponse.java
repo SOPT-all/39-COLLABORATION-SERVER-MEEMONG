@@ -8,9 +8,9 @@ import org.sopt.meemong.domain.post.domain.TreatmentType;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-@Schema(name = "RecommendedPostCard")
 public record RecommendedPostListResponse(List<Card> posts) {
 
+    @Schema(name = "RecommendedPostCard")
     public record Card(
             Long postId,
             String title,
